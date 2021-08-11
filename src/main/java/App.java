@@ -2,17 +2,18 @@ import java.util.Scanner;
 
 public class App {
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+    // Scanner sc = new Scanner(System.in);
+    //
+    // System.out.print("n = ");
+    // int n = sc.nextInt();
+    //
+    // int[] arr = new int[n];
+    // for (int i = 0; i < n; i++) {
+    //   System.out.format("a[%d] = ", i);
+    //   arr[i] = sc.nextInt();
+    // }
 
-    System.out.print("n = ");
-    int n = sc.nextInt();
-
-    int[] arr = new int[n];
-    for (int i = 0; i < n; i++) {
-      System.out.format("a[%d] = ", i);
-      arr[i] = sc.nextInt();
-    }
-
+    int[] arr = generateArray(20, -50, 50);
     printArray(arr);
     System.out.format("Sum = %d\n", sumElements(arr));
 
@@ -66,5 +67,14 @@ public class App {
         }
       }
     }
+  }
+
+  public static int[] generateArray(int n, int min, int max) {
+    int[] ret = new int[n];
+    for (int i = 0; i < ret.length; i++) {
+      ret[i] = (int) Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    return ret;
   }
 }
