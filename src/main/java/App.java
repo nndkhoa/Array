@@ -13,9 +13,14 @@ public class App {
     //   arr[i] = sc.nextInt();
     // }
 
+    // int[] arr = { 2, 4, 6, 8 };
     int[] arr = generateArray(20, -50, 50);
     printArray(arr);
     System.out.format("Sum = %d\n", sumElements(arr));
+
+    if (isAllEven(arr)) {
+      System.out.println("Mảng chẵn.");
+    } else System.out.println("Mảng không chẵn.");
 
     sortArrayAsc(arr);
     printArray(arr);
@@ -76,5 +81,15 @@ public class App {
     }
 
     return ret;
+  }
+
+  public static boolean isAllEven(int[] arr) {
+    for (int n : arr) {
+      if (n % 2 != 0) {
+        return false;
+      }
+    }
+
+    return true;
   }
 }
